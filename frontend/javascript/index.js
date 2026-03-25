@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if(document.querySelector('.badge')){
     cartCount()
   }
+  if (document.querySelector('.clear-cart')){
+  clearCart()
+}
+
 
 });
 if (document.getElementById('sign-up-button')) {
@@ -34,7 +38,4 @@ if (document.querySelector('.home-link')) {
 }
 if (document.querySelector('.welcome-container')) {
   welcomeUser()
-}
-if (document.querySelector('.remove')){
-  clearCart()
 }

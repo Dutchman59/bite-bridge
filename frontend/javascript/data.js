@@ -278,6 +278,7 @@ document.querySelectorAll(".btn").forEach((button) => {
     cart.push({id: buttonId, quantity:1})
    }
    localStorage.setItem('cart', JSON.stringify(cart))
+   location.reload()
   });
 });
 }
@@ -287,8 +288,9 @@ export function cartCount (){
   if(!cart)return;
   cart.forEach((cartItem) =>{
     product += cartItem.quantity
+    
   } )
-
+  localStorage.setItem("quantity", JSON.stringify(product))
   document.querySelector('.badge').innerHTML = product
   
 

@@ -1,21 +1,19 @@
-import { food } from './data.js';
+import { food } from "./data.js";
 
-
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 export function populateCart() {
-  if(!cart)return;
-    
-    let cartHtml = "";
-    let summaryHtml = "";
-    let totalPrice = 0;
-    let total = 0;
-    cart.forEach((cartItem) => {
-        const foods = food.find(item => item.id === cartItem.id)
-        localStorage.setItem('foods', JSON.stringify(foods))
-        if (foods) {
-            cartHtml += `
+  if (!cart) return;
+
+  let cartHtml = "";
+  let summaryHtml = "";
+  let totalPrice = 0;
+  let total = 0;
+  cart.forEach((cartItem) => {
+    const foods = food.find((item) => item.id === cartItem.id);
+    localStorage.setItem("foods", JSON.stringify(foods));
+    if (foods) {
+      cartHtml += `
          <div class="cart-card">
           <img src="${foods.img}" alt="no" />
           <div class="cart-content">
@@ -37,15 +35,22 @@ export function populateCart() {
             </div>
           </div>
         </div>
-        `
-        totalPrice += foods.price 
-        total = totalPrice + 150
-        summaryHtml = `
+        `;
+      const cartQuantity = localStorage.getItem("quantity");
+      console.log(cartQuantity);
+
+      totalPrice += foods.price;
+      total = totalPrice + 150;
+      summaryHtml = `
           <h3>Payment Summary</h3>
 
         <div class="summary-row">
           <span>Subtotal</span>
           <span>${totalPrice}</span>
+        </div>
+        <div class="summary-row">
+          <span>cart quantity</span>
+          <span>${cartQuantity}</span>
         </div>
 
         <div class="summary-row">
@@ -59,30 +64,19 @@ export function populateCart() {
         </div>
 
         <button class="checkout">Proceed to Checkout</button>
-        <button class="remove clear-cart" >clear cart</button>`
+        <button class="clear-cart" >clear cart</button>`;
+    }
+  });
 
-        }
-
-    })
-    
-    document.querySelector('.cart-items').innerHTML = cartHtml
-    document.querySelector('.summary').innerHTML = summaryHtml
-
+  document.querySelector(".cart-items").innerHTML = cartHtml;
+  document.querySelector(".summary").innerHTML = summaryHtml;
 }
-export function clearCart (){
-  const clearBtn = document.querySelector('.remove')
-  if(!clearBtn)return
-   clearBtn.onclick = () =>{
-    localStorage.removeItem('cart')
-    
-   }
-   
-   
-
+export function clearCart() {
+  const clearBtn = document.querySelector(".clear-cart");
+  if (!clearBtn) return;
+  clearBtn.onclick = () => {
+    localStorage.removeItem("cart");
+    console.log("cart cleared");
+    location.reload();
+  };
 }
-
-
-
-  
- 
-  
