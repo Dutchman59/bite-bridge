@@ -1,0 +1,243 @@
+ body {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     background-image:
+         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+         url("../icons_images/back2.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+
+ /*@media (max-width: 780px) {
+      .container {
+        
+      }
+      .container input{
+      
+      }
+    }*/
+ .navbar {
+     width: 100%;
+     position: fixed;
+     top: 0;
+     left: 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: rgba(0, 0, 0, 0.5);
+     z-index: 50;
+ }
+
+ .navbar .logo img {
+     height: 60px;
+     width: auto;
+ }
+
+
+ .nav-links {
+     display: flex;
+     gap: 20px;
+     list-style: none;
+ }
+
+ .nav-links a {
+     color: white;
+     text-decoration: none;
+     font-weight: 500;
+ }
+
+ .nav-links a:hover {
+     color: rgb(251, 164, 3);
+ }
+ .home-hero {
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-text span {
+    color: rgb(251, 164, 3);
+}
+
+.hero-text p {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    width: 250px;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    background: rgb(251, 164, 3);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+
+ .container {
+     width: 90%;
+     max-width: 350px;
+     background: transparent;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 30px;
+ }
+
+ .container input {
+     padding: 5px;
+
+     max-width: 350px;
+     width: 75%;
+     border: none;
+     color: white;
+     border-bottom: 1px solid grey;
+     border-radius: 4px;
+     background: transparent;
+ }
+
+ .container button {
+     color: black;
+     font-weight: bolder;
+     background: orange;
+     border: none;
+     padding: 5px;
+     border-radius: 4px;
+     border-bottom: 1px solid grey;
+ }
+
+ .container b {
+     color: grey;
+ }
+
+ .container a {
+     color: orange;
+ }
+
+ .container h2 {
+     color: white;
+     text-align: center;
+ }
+
+ .subtitle {
+     color: rgba(204, 186, 186, 0.7);
+     text-align: center;
+     font-size: 14px;
+ }
+
+ /* dashboard atyles*/
+
+ .welcome {
+     margin-top: 55px;
+     text-align: center;
+     color: grey;
+ }
+ .welcome-container{
+    margin-top:64px;
+ }
+
+ .welcome span {
+     color: orange;
+     border-bottom: 1px solid orange;
+     border-radius: 4px;
+
+ }
+
+
+ .cards button img {
+     max-width: 100%;
+     max-height: 100%;
+     border-radius: 6px;
+ }
+
+ .cards button {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     background: rgba(128, 128, 128, 0.4);
+     border-radius: 6px;
+     border: none;
+     padding: 10px;
+ }
+
+ .cards b {
+     color: beige;
+     opacity: 0.6;
+ }
+
+ .cards {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 8px;
+     padding: 0;
+     width: 100%;
+     background: solid linear-gradient(grey orange);
+ }
+
+
+ .section-title {
+     color: bisque;
+     opacity: 0.8;
+     border-bottom: 1px solid grey;
+     border-radius: 4px;
+     margin-top: 10px;
+     font-weight: 600;
+ }
+
+ .badge {
+     position: absolute;
+     top: 8px;
+     right: 8px;
+     background: orange;
+     color: black;
+     font-size: 12px;
+     padding: 2px 6px;
+     border-radius: 10px;
+ }
+
+ .logout {
+     margin-top: 20px;
+     background: red;
+     color: white;
+     border: none;
+     padding: 8px 20px;
+     border-radius: 6px;
+ }
+
+ .card:hover {
+     transform: scale(1.04);
+     transition: 0.3s;
+ }
+
+ .orders {
+     color: orange;
+ }
