@@ -44,6 +44,9 @@
      gap: 20px;
      list-style: none;
  }
+ .nav-links img{
+    height: 25px;
+ }
 
  .nav-links a {
      color: white;

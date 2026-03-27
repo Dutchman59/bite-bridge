@@ -191,6 +191,10 @@
     font-weight: 500;
     transition: color 0.3s;
   }
+  .nav-links img{
+    height: 22px;
+    width: auto;
+  }
 
   .nav-links li a:hover {
     color: rgb(251, 164, 3);

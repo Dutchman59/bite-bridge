@@ -65,6 +65,13 @@ export function populateCart() {
         <button class="checkout">Proceed to Checkout</button>
         <button class="clear-cart" >clear cart</button>`;
     }
+    else{
+      cartHtml = `
+       <div class="cart-card">
+         <button>go shop</button>
+        </div>
+      `;
+    }
   });
 
   document.querySelector(".cart-items").innerHTML = cartHtml;
