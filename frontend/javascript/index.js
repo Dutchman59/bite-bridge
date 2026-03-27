@@ -39,3 +39,4 @@ if (document.querySelector('.home-link')) {
 if (document.querySelector('.welcome-container')) {
   welcomeUser()
 }
+

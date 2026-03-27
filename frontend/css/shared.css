@@ -56,12 +56,18 @@ body {
 }
 
 .profile-left h3 {
+  opacity: 0.7;
   margin: 5px 0;
 }
 
 .profile-left p {
   opacity: 0.7;
   font-size: 14px;
+}
+.profile-left span{
+  color: orange;
+  border-radius: 4px;
+  border-bottom: 1px solid grey;
 }
 
 .profile-right {

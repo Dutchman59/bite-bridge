@@ -36,11 +36,10 @@ export function populateCart() {
           </div>
         </div>
         `;
-      const cartQuantity = localStorage.getItem("quantity");
-      console.log(cartQuantity);
 
       totalPrice += foods.price;
       total = totalPrice + 150;
+      const cartQuantity = localStorage.getItem("quantity");
       summaryHtml = `
           <h3>Payment Summary</h3>
 
