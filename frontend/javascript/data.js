@@ -235,8 +235,19 @@ export const food = [
 ];
 
 
+function shuffleFood(foodArray) {
+  for (let i = foodArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [foodArray[i], foodArray[j]] = [foodArray[j], foodArray[i]];
+  }
+  return foodArray;
+}
+
+const shuffledFood = shuffleFood([...food]); 
+
+
 export function populateUi() {
-  food.forEach((foodItem) => {
+  shuffledFood.forEach((foodItem) => {
     let resCard = `<div class="food-card">
             <img src="${foodItem.img}" alt="Burger">
 

@@ -27,17 +27,18 @@ export function populateCart() {
               </p>
             <div class="cart-bottom">
               <div class="qty">
-                <button>-</button>
+                <button data-food-Id="${cartItem.id}" class="minus">-</button>
                 <span>${cartItem.quantity}</span>
-                <button>+</button>
+                <button data-food-Id="${cartItem.id} class="plus" >+</button>
               </div>
               <button class="remove">Remove</button>
             </div>
           </div>
         </div>
         `;
+      const totalQuantrityPrice = cartItem.quantity * foods.price;
+      totalPrice += totalQuantrityPrice;
 
-      totalPrice += foods.price;
       total = totalPrice + 150;
       const cartQuantity = localStorage.getItem("quantity");
       summaryHtml = `
@@ -64,7 +65,7 @@ export function populateCart() {
 
         <button class="checkout">Proceed to Checkout</button>
         <button class="clear-cart" >clear cart</button>`;
-    }
+    } 
     else{
       cartHtml = `
        <div class="cart-card">
@@ -77,6 +78,8 @@ export function populateCart() {
   document.querySelector(".cart-items").innerHTML = cartHtml;
   document.querySelector(".summary").innerHTML = summaryHtml;
 }
+
+
 export function clearCart() {
   const clearBtn = document.querySelector(".clear-cart");
   if (!clearBtn) return;
@@ -85,4 +88,44 @@ export function clearCart() {
     console.log("cart cleared");
     location.reload();
   };
+}
+
+
+export function plusMinusButton() {
+  const plusBtns = document.querySelectorAll(".plus");
+  const minusBtns = document.querySelectorAll(".minus");
+
+  plusBtns.forEach((btn) => {
+    btn.onclick = () => {
+      const id = btn.dataset.id;
+      console.log(id);
+      
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const item = cart.find((item) => item.id === id);
+      if (item) {
+        item.quantity += 1;
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    };
+  });
+
+  minusBtns.forEach((btn) => {
+    btn.onclick = () => {
+      const id = btn.dataset.id;
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const item = cart.find((item) => item.id === id);
+      if (item && item.quantity > 1) {
+        item.quantity -= 1;
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    };
+  });
 }

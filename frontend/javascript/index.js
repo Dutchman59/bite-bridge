@@ -1,5 +1,5 @@
 import { populateUi, addToCart, cartCount } from "./data.js";
-import { populateCart, clearCart  } from "./cart.js";
+import { populateCart, clearCart, plusMinusButton } from "./cart.js";
 import { saveUserDetails, renderUserDetails, removeUser, verifyUser, redirectUser, welcomeUser } from "./signup.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -39,4 +39,12 @@ if (document.querySelector('.home-link')) {
 if (document.querySelector('.welcome-container')) {
   welcomeUser()
 }
+if (document.querySelector('.minus')) {
+  plusMinusButton()
+}
+if (document.querySelector('.plus')) {
+  plusMinusButton()
+}
+
+
 
